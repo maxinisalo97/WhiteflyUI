@@ -38,6 +38,10 @@
             <Border BorderBrush="Gray" BorderThickness="1" Margin="0,10,0,0" Height="300">
                 <Image Source="{Binding OriginalImage}" Stretch="Uniform"/>
             </Border>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10" VerticalAlignment="Center">
+                <TextBlock Text="IP Server:" Width="120" VerticalAlignment="Center"/>
+                <TextBox Width="200" Text="{Binding ServerIP, Mode=TwoWay}" />
+            </StackPanel>
         </StackPanel>
 
         <!-- Panel Derecho: Visualización de la imagen procesada con pan y zoom -->

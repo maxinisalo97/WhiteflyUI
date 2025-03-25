@@ -36,6 +36,12 @@ namespace WhiteflyUI.ViewModels
 
     public class MainViewModel : INotifyPropertyChanged
     {
+        private string _serverIP = "localhost";
+        public string ServerIP
+        {
+            get => _serverIP;
+            set { _serverIP = value; OnPropertyChanged(nameof(ServerIP)); }
+        }
         // Zoom
         private double _zoomFactor = 1.0;
         public double ZoomFactor
@@ -124,7 +130,7 @@ namespace WhiteflyUI.ViewModels
                 using (var client = new HttpClient())
                 {
                     // Ajusta la URL según la ubicación de tu API
-                    var url = "http://localhost:8000/predict";
+                    var url = $"http://{ServerIP}:8000/predict";
 
                     using (var form = new MultipartFormDataContent())
                     {
